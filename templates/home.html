@@ -2,20 +2,24 @@
 
 {% block title %}
     {% if title %}
-        <title>Flask blog - {{ title }}</title>
+        Flask blog - {{ title }}
     {% else %}
-        <title>Flask blog</title>
+        Flask blog
     {% endif %}
 {% endblock %}
 
 {% block content %}
-    <h1>
-        Home Page
-    </h1>
-    <hr>
+
     {% for post in posts %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content }}</p>
-        <small>Author: {{ post.author }} | Date: {{ post.date_posted }}</small>
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a href="#" class="mr-2">{{ post.author }}</a>
+                    <small class="text-muted">{{ post.date_posted }}</small>
+                </div>
+                <h2><a href="#" class="article-title">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
     {% endfor %}
 {% endblock %}
