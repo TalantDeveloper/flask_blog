@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if title %}
+        <title>Flask blog - {{ title }}</title>
+    {% else %}
+        <title>Flask blog</title>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1>About Page</h1>
+
+{% endblock %}
