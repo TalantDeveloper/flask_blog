@@ -44,7 +44,7 @@
 <main class="container" role="main">
     <div class="row">
         <div class="col-md-8">
-            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% with messages = get_flashed_messages(with_categories='success') %}
                 {% if messages %}
                     {% for category, message in messages %}
                     	<div class="alert alert-{{ category }}">
