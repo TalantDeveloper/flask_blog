@@ -10,6 +10,17 @@
                 <legend class="border-bottom mt-4">Join Today</legend>
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                        	<span>
+                            {{ error }}
+                            </span>
+                        {% endfor %}
+
+                        </div>
+                    {% endif %}
                     {{ form.username(class="form-control form-control-lg") }}
                 </div>
                 <div class="form-group">
